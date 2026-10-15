@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Panel - Hospital EsSalud Norte Chico</title>
+  <link rel="stylesheet" href="css/panel.css">
+</head>
+<body>
+  <header>
+    <div class="logo">Hospital ESSALUD Norte Chico</div>
+    <nav aria-label="Navegación principal">
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="panel.html">Panel</a></li>
+        <li><a href="caja.html" id="enlace-caja">Caja</a></li>
+        <li><a href="login.html" id="btn-salir">Cerrar sesión</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="cita-container">
+    <h1 id="titulo-form">Registrar cita (atención presencial)</h1>
+    <form id="formPanel">
+      <div class="form-group">
+        <label for="numeroAsegurado">Número de asegurado (4 dígitos)</label>
+        <input type="text" id="numeroAsegurado" name="numero_asegurado" required maxlength="4" inputmode="numeric" pattern="[0-9]{4}" title="4 dígitos">
+      </div>
+      <div class="form-group">
+        <label for="nombrePaciente">Nombre del paciente</label>
+        <input type="text" id="nombrePaciente" name="nombre_paciente" required minlength="3" maxlength="100">
+      </div>
+      <div class="form-group">
+        <label for="sedeHospital">Sede</label>
+        <select id="sedeHospital" name="sede" required>
+          <option value="">-- Selecciona una sede --</option>
+          <option value="Hospital Huacho">Hospital Huacho</option>
+          <option value="Hospital Barranca">Hospital Barranca</option>
+          <option value="Hospital Huaral">Hospital Huaral</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="tipoAsegurado">Tipo de asegurado</label>
+        <select id="tipoAsegurado" name="tipo_asegurado" required>
+          <option value="titular">Titular</option>
+          <option value="derechohabiente">Derechohabiente</option>
+        </select>
+      </div>
+      <div class="form-group" id="grupo-estado" hidden>
+        <label for="estado">Estado</label>
+        <select id="estado" name="estado">
+          <option value="registrado">registrado</option>
+          <option value="atendido">atendido</option>
+          <option value="rechazado">rechazado</option>
+        </select>
+      </div>
+      <button type="submit" class="btn-agendar" id="btn-guardar">Crear cita</button>
+      <button type="button" class="btn-agendar btn-secundario" id="btn-cancelar" hidden>Cancelar edición</button>
+    </form>
+    <div id="mensajeConfirmacion" role="status"></div>
+  </main>
+
+  <section class="contenedor-tabla">
+    <h2 class="titulo-seccion">Todas las citas</h2>
+    <div class="tabla-scroll">
+      <table>
+        <caption class="solo-lectores">Listado de citas</caption>
+        <thead><tr><th scope="col">Código</th><th scope="col">Paciente</th><th scope="col">Sede</th><th scope="col">Tipo</th><th scope="col">Monto</th><th scope="col">Estado</th><th scope="col">Pago</th><th scope="col">Canal</th><th scope="col">Cliente (id)</th><th scope="col">Acciones</th></tr></thead>
+        <tbody id="cuerpo-tabla"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <script type="module" src="js/panel/panel.js"></script>
+</body>
+</html>

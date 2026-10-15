@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mis registros - Hospital EsSalud Norte Chico</title>
+  <link rel="stylesheet" href="css/consulta.css">
+</head>
+<body>
+  <header>
+    <div class="logo">Hospital ESSALUD Norte Chico</div>
+    <nav aria-label="Navegación principal">
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="registro.html">Registrar cita</a></li>
+        <li><a href="consulta.html">Mis registros</a></li>
+        <li><a href="pago.html">Pagar</a></li>
+        <li><a href="login.html" id="btn-salir">Cerrar sesión</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="contenedor-tabla">
+    <h1 class="titulo-seccion">Mis registros</h1>
+    <p class="subtitulo-seccion">Citas registradas con tu cuenta</p>
+    <p id="sin-registros" hidden>Aún no tienes citas registradas.</p>
+    <div class="tabla-scroll">
+      <table>
+        <caption class="solo-lectores">Mis citas registradas</caption>
+        <thead><tr><th scope="col">Código</th><th scope="col">Paciente</th><th scope="col">Sede</th><th scope="col">Tipo</th><th scope="col">Monto</th><th scope="col">Estado</th><th scope="col">Pago</th><th scope="col">Acción</th></tr></thead>
+        <tbody id="cuerpo-tabla"></tbody>
+      </table>
+    </div>
+  </main>
+
+  <script type="module" src="js/consulta/consulta.js"></script>
+</body>
+</html>

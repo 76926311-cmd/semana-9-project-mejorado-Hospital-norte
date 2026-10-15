@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio - Hospital EsSalud Norte Chico</title>
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo">Hospital ESSALUD Norte Chico</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="servicios.html">Servicios</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+                <li><a href="nosotros.html">Nosotros</a></li>
+                <li><a href="registro.html">Registrar cita</a></li>
+                <li><a href="consulta.html">Mis registros</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- 1. Presentación de la Entidad -->
+    <section class="hero" id="inicio">
+        <h1>Seguridad y Salud Integral a tu Servicio</h1>
+        <p>Brindamos cobertura médica, prestaciones económicas y servicios de salud
+            a nuestros asegurados para garantizar el bienestar de la ciudadanía.</p>
+    </section>
+
+    <!-- 2. Consulta rápida de seguro -->
+    <div class="quick-search">
+        <h3>Consulta el Estado de tu Seguro</h3>
+        <p style="font-size:0.85rem; margin-bottom:1rem; color:#666;">Ingresa tu DNI para verificar si tu acreditación está activa.</p>
+        <input type="text" id="dniInput" placeholder="Número de DNI (8 dígitos)" maxlength="8" inputmode="numeric" aria-label="Número de DNI">
+        <button class="btn" onclick="validarConsulta()">Consultar</button>
+        <p id="mensajeResultado" style="margin-top: 1rem; font-weight: bold;" aria-live="polite"></p>
+    </div>
+
+    <!-- 3. Campañas de Salud Vigentes -->
+    <section class="campanas-container">
+        <h2 class="titulo-seccion">Campañas de Salud Vigentes</h2>
+        <p class="subtitulo-seccion">Participa en nuestras jornadas preventivas gratuitas a nivel nacional</p>
+
+        <div class="campanas-grid">
+
+            <!-- Campaña 1 -->
+            <div class="campana-card">
+                <span class="badge badge-salud">Salud Preventiva</span>
+                <h3>Campaña de Vacunación Nacional</h3>
+                <p>Protege a tu familia contra la influenza y neumococo. Atención en todos los centros asistenciales sin previa cita.</p>
+                <div class="campana-info"></div>
+            </div>
+
+            <!-- Campaña 2 -->
+            <div class="campana-card">
+                <span class="badge badge-prevencion">Despistaje Gratuito</span>
+                <h3>Prevención de Diabetes e Hipertensión</h3>
+                <p>Evaluación médica rápida, despistaje de glucosa y toma de presión arterial para asegurados mayores de 18 años.</p>
+                <div class="campana-info"></div>
+            </div>
+
+            <!-- Campaña 3 -->
+            <div class="campana-card">
+                <span class="badge badge-donacion">Solidaridad</span>
+                <h3>Jornada de Donación Voluntaria de Sangre</h3>
+                <p>Tu donación salva vidas. Acércate a los puntos móviles en los principales hospitales de la red.</p>
+                <div class="campana-info"></div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 4. Red de sedes -->
+    <section class="sedes-container">
+        <h2 class="titulo-seccion">Nuestra Red de Sedes</h2>
+        <p class="subtitulo-seccion">Encuentra la atención médica más cercana a tu ubicación</p>
+
+        <div class="sedes-grid">
+            <!-- Sede 1 -->
+            <div class="sede-card">
+                <h3>Sede Huacho</h3>
+                <p><strong>Dirección:</strong> Av. San Martín 123</p>
+                <p><strong>Atención:</strong> 24 Horas / Urgencias</p>
+            </div>
+
+            <!-- Sede 2 -->
+            <div class="sede-card">
+                <h3>Sede Barranca</h3>
+                <p><strong>Dirección:</strong> Jr. Gálvez 456</p>
+                <p><strong>Atención:</strong> Lunes a Sábado (7:00 am - 8:00 pm)</p>
+            </div>
+
+            <!-- Sede 3 -->
+            <div class="sede-card">
+                <h3>Sede Huaral</h3>
+                <p><strong>Dirección:</strong> Av. Solar 789</p>
+                <p><strong>Atención:</strong> Lunes a Viernes (8:00 am - 6:00 pm)</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Script simple (no módulo) para que el botón "Consultar" funcione -->
+    <script>
+        function validarConsulta() {
+            var dni = document.getElementById('dniInput').value.trim();
+            var mensaje = document.getElementById('mensajeResultado');
+
+            if (!/^[0-9]{8}$/.test(dni)) {
+                mensaje.style.color = '#b3382c';
+                mensaje.textContent = 'Ingresa un DNI válido de 8 dígitos.';
+                return;
+            }
+
+            mensaje.style.color = '#1f8a5b';
+            mensaje.textContent = 'DNI válido. La verificación de acreditación estará disponible próximamente.';
+        }
+    </script>
+
+</body>
+</html>

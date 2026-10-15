@@ -1,0 +1,150 @@
+/* =========================================================
+   ESTILOS GENERALES - Hospital ESSALUD Norte Chico
+   Incluye: sitio principal (inicio) + login + registro de datos
+   ========================================================= */
+
+/* ---------- Colores ---------- */
+:root {
+    --azul: #0a4f8f;
+    --azul-oscuro: #073a6b;
+    --celeste: #e6f0f9;
+    --verde: #1f8a5b;
+    --rojo: #b3382c;
+    --texto: #1d2a35;
+    --gris: #5f6b76;
+    --borde: #d3dce4;
+    --fondo: #f5f8fb;
+    --blanco: #ffffff;
+    --foco: #d9a441;
+}
+
+/* ---------- Base ---------- */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Segoe UI", Roboto, Arial, sans-serif;
+    line-height: 1.55;
+    color: var(--texto);
+    background: var(--fondo);
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible {
+    outline: 3px solid var(--foco);
+    outline-offset: 2px;
+}
+
+/* =========================================================
+   LOGIN y REGISTRO DE DATOS (login.html / formulario)
+   Todo va dentro de .acceso para no afectar al resto del sitio
+   ========================================================= */
+
+/* Centra la tarjeta solo en las páginas que tienen .acceso */
+body:has(> .acceso) {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--azul-oscuro);
+}
+
+.acceso {
+    width: 100%;
+    max-width: 400px;
+    margin: 1rem;
+    background: var(--blanco);
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+/* Pestañas */
+.pestanas {
+    display: flex;
+}
+
+.pestana {
+    flex: 1;
+    padding: 1rem;
+    border: 0;
+    background: #e1e8ee;
+    font: inherit;
+    cursor: pointer;
+    color: var(--gris);
+}
+
+.pestana.activa {
+    background: var(--blanco);
+    color: var(--texto);
+    font-weight: bold;
+}
+
+/* Formularios */
+.acceso form {
+    display: none;
+    padding: 1.5rem 1.5rem 2rem;
+}
+
+.acceso form.visible {
+    display: block;
+}
+
+.acceso h1 {
+    margin: 0 0 1.25rem;
+    font-size: 1.4rem;
+}
+
+.acceso label {
+    display: block;
+    margin-bottom: 0.35rem;
+    font-size: 0.95rem;
+}
+
+.acceso input {
+    width: 100%;
+    padding: 0.65rem;
+    margin-bottom: 1rem;
+    border: 1px solid var(--borde);
+    border-radius: 4px;
+    font: inherit;
+    background: var(--blanco);
+}
+
+button.enviar {
+    width: 100%;
+    padding: 0.75rem;
+    border: 0;
+    border-radius: 4px;
+    background: var(--azul);
+    color: var(--blanco);
+    font: inherit;
+    cursor: pointer;
+}
+
+button.enviar:hover {
+    background: var(--azul-oscuro);
+}
+
+button.enviar:disabled {
+    opacity: 0.6;
+    cursor: wait;
+}
+
+/* Mensajes de resultado */
+.mensaje {
+    min-height: 1.4rem;
+    margin-top: 1rem;
+    font-size: 0.95rem;
+}
+
+.mensaje.error {
+    color: var(--rojo);
+}
+
+.mensaje.ok {
+    color: var(--verde);
+}
+

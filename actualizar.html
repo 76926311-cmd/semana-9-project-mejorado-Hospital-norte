@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Actualizar cita - Hospital EsSalud Norte Chico</title>
+  <link rel="stylesheet" href="css/actualizar.css">
+</head>
+<body>
+  <header>
+    <div class="logo">Hospital ESSALUD Norte Chico</div>
+    <nav aria-label="Navegación principal">
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="registro.html">Registrar cita</a></li>
+        <li><a href="consulta.html">Mis registros</a></li>
+        <li><a href="pago.html">Pagar</a></li>
+        <li><a href="login.html" id="btn-salir">Cerrar sesión</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="cita-container">
+    <h1>Actualizar cita</h1>
+    <p id="aviso" role="status" hidden></p>
+    <form id="formActualizar">
+      <div class="form-group">
+        <label for="numeroAsegurado">Número de asegurado (4 dígitos)</label>
+        <input type="text" id="numeroAsegurado" name="numero_asegurado" required maxlength="4" inputmode="numeric" pattern="[0-9]{4}" title="4 dígitos">
+      </div>
+      <div class="form-group">
+        <label for="nombrePaciente">Nombre del paciente</label>
+        <input type="text" id="nombrePaciente" name="nombre_paciente" required minlength="3" maxlength="100">
+      </div>
+      <div class="form-group">
+        <label for="sedeHospital">Sede</label>
+        <select id="sedeHospital" name="sede" required>
+          <option value="">-- Selecciona una sede --</option>
+          <option value="Hospital Huacho">Hospital Huacho</option>
+          <option value="Hospital Barranca">Hospital Barranca</option>
+          <option value="Hospital Huaral">Hospital Huaral</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="tipoAsegurado">Tipo de asegurado</label>
+        <select id="tipoAsegurado" name="tipo_asegurado" required>
+          <option value="titular">Titular</option>
+          <option value="derechohabiente">Derechohabiente</option>
+        </select>
+      </div>
+      <p class="monto-box">Tasa del certificado: <output id="monto-estimado" for="tipoAsegurado" aria-live="polite">S/ 0.00</output></p>
+      <button type="submit" class="btn-agendar" id="btn-guardar">Guardar cambios</button>
+    </form>
+    <div id="mensajeConfirmacion" role="status"></div>
+    <p><a href="consulta.html">Volver a mis registros</a></p>
+  </main>
+
+  <script type="module" src="js/actualizar/actualizar.js"></script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Constancia de pago - Hospital EsSalud Norte Chico</title>
+  <link rel="stylesheet" href="css/comprobante.css">
+</head>
+<body>
+  <header>
+    <div class="logo">Hospital ESSALUD Norte Chico</div>
+    <nav aria-label="Navegación principal">
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="consulta.html">Mis registros</a></li>
+        <li><a href="login.html" id="btn-salir">Cerrar sesión</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="contenedor-pago">
+    <h1>Constancia de pago</h1>
+    <section id="comprobante" aria-live="polite"></section>
+    <div class="acciones">
+      <button type="button" id="imprimir">Imprimir</button>
+      <a href="consulta.html">Volver</a>
+    </div>
+  </main>
+
+  <script type="module" src="js/comprobante/comprobante.js"></script>
+</body>
+</html>

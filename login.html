@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acceso</title>
+    <link rel="stylesheet" href="css/login.css">
+</head>
+<body>
+
+    <main class="acceso">
+        <div class="pestanas" role="tablist">
+            <button class="pestana activa" id="tab-login" role="tab" aria-selected="true" aria-controls="form-login" type="button">Iniciar sesión</button>
+            <button class="pestana" id="tab-registro" role="tab" aria-selected="false" aria-controls="form-registro" type="button">Crear cuenta</button>
+        </div>
+
+        <!-- Iniciar sesión -->
+        <form id="form-login" class="visible" role="tabpanel" aria-labelledby="tab-login">
+            <h1>Iniciar sesión</h1>
+
+            <label for="login-correo">Correo</label>
+            <input type="email" id="login-correo" required autocomplete="email">
+
+            <label for="login-contrasena">Contraseña</label>
+            <input type="password" id="login-contrasena" required autocomplete="current-password">
+
+            <button type="submit" class="enviar">Iniciar sesión</button>
+            <p class="mensaje" id="msg-login" aria-live="polite"></p>
+        </form>
+
+        <!-- Crear cuenta -->
+        <form id="form-registro" role="tabpanel" aria-labelledby="tab-registro">
+            <h1>Crear cuenta</h1>
+
+            <label for="reg-nombre">Nombre</label>
+            <input type="text" id="reg-nombre" required autocomplete="name">
+
+            <label for="reg-correo">Correo</label>
+            <input type="email" id="reg-correo" required autocomplete="email">
+
+            <label for="reg-contrasena">Contraseña</label>
+            <input type="password" id="reg-contrasena" required minlength="6" autocomplete="new-password">
+
+            <button type="submit" class="enviar">Crear cuenta</button>
+            <p class="mensaje" id="msg-registro" aria-live="polite"></p>
+        </form>
+    </main>
+
+    <script type="module" src="js/auth/login.js"></script>
+</body>
+</html>
